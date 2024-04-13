@@ -69,11 +69,26 @@
     "test:ts:packages": "nx run-many --target=test:ts --nx-ignore-cycles",
     "test:unit": "jest --config jest.config.js",
     "test:unit:all": "nx run-many --target=test:unit --nx-ignore-cycles",
-    "test:unit:watch": "run test:unit --watch"
+    "test:unit:watch": "run test:unit --watch",
+    "watch": "nx run-many --target=watch --nx-ignore-cycles",
+    "dev": "INLINE_RUNTIME_CHUNK=false strapi develop --watch-admin --bundler vite ",
+    "strapi": "strapi",
+    "start": "strapi start"
   },
   "resolutions": {
     "@strapi/design-system": "1.17.0-typescript.0",
     "@types/koa": "2.13.4"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "4.21.0",
+    "@strapi/plugin-i18n": "workspace:*",
+    "@strapi/plugin-users-permissions": "workspace:*",
+    "@strapi/strapi": "workspace:*",
+    "better-sqlite3": "8.6.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "styled-components": "5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

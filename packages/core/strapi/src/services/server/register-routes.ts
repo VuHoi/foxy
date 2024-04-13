@@ -40,6 +40,7 @@ const registerAdminRoutes = (strapi: Strapi) => {
     });
     strapi.server.routes(router);
   });
+
 };
 
 /**

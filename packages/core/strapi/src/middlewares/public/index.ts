@@ -58,12 +58,12 @@ export const publicStatic: Common.MiddlewareFactory = (
     };
 
     strapi.server.routes([
-      {
-        method: 'GET',
-        path: '/',
-        handler: serveIndexPage,
-        config: { auth: false },
-      },
+      // {
+      //   method: 'GET',
+      //   path: '/',
+      //   handler: serveIndexPage,
+      //   config: { auth: false },
+      // },
       {
         method: 'GET',
         path: '/index.html',

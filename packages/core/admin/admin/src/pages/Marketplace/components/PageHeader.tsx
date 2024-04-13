@@ -16,7 +16,6 @@ const PageHeader = ({ isOnline, npmPackageType = 'plugin' }: PageHeaderProps) =>
   const { trackUsage } = useTracking();
 
   const tracking = npmPackageType === 'provider' ? 'didSubmitProvider' : 'didSubmitPlugin';
-
   return (
     <HeaderLayout
       title={formatMessage({

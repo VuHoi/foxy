@@ -22,7 +22,6 @@ const watch = async (ctx: BuildContext): Promise<ViteWatcher> => {
 
   ctx.strapi.server.app.use(async (ctx, next) => {
     const url = ctx.url;
-
     // Check if the URL points to a file that Vite can handle
     const file = await vite.moduleGraph.getModuleByUrl(url);
 
@@ -63,6 +62,15 @@ const watch = async (ctx: BuildContext): Promise<ViteWatcher> => {
     {
       method: 'GET',
       path: `${ctx.basePath}:path*`,
+      handler: serveAdmin,
+      config: { auth: false },
+    },
+  ]);
+
+  ctx.strapi.server.routes([
+    {
+      method: 'GET',
+      path: `/:path*`,
       handler: serveAdmin,
       config: { auth: false },
     },

@@ -28,9 +28,12 @@ const DefaultDocument = ({ entryPath }: DefaultDocumentProps) => {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="robots" content="noindex" />
         <meta name="referrer" content="same-origin" />
+        <meta
+          name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"
+        />
 
         <title>Strapi Admin</title>
         <style>{globalStyles}</style>

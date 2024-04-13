@@ -52,7 +52,7 @@ export const security: Common.MiddlewareFactory<Config> =
       });
     }
 
-    if (ctx.method === 'GET' && ['/admin'].some((str) => ctx.path.startsWith(str))) {
+    if (ctx.method === 'GET' && ['/admin', '/'].some((str) => ctx.path.startsWith(str))) {
       helmetConfig = merge(helmetConfig, {
         contentSecurityPolicy: {
           directives: {

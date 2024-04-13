@@ -53,7 +53,6 @@ const develop: StrapiCommand = ({ command, ctx }) => {
     .description('Start your Strapi application in development mode')
     .action(async (options: DevelopCLIOptions) => {
       const { develop } = await import('./commands/develop');
-
       return develop({ ...options, ...ctx });
     });
 };

@@ -94,6 +94,14 @@ const watch = async (ctx: BuildContext): Promise<WebpackWatcher> => {
         config: { auth: false },
       },
     ]);
+    // ctx.strapi.server.routes([
+    //   {
+    //     method: 'GET',
+    //     path: `/:path*`,
+    //     handler: serveAdmin,
+    //     config: { auth: false },
+    //   },
+    // ]);
 
     devMiddleware.waitUntilValid(() => {
       res({

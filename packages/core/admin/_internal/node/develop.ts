@@ -109,10 +109,11 @@ const develop = async ({
      * sure that at least the admin is built for users & they can interact
      * with the application.
      */
+   
+
     if (!watchAdmin) {
       timer.start('createBuildContext');
       const contextSpinner = logger.spinner(`Building build context`).start();
-      console.log('');
 
       const ctx = await createBuildContext({
         cwd,
@@ -210,7 +211,7 @@ const develop = async ({
 
       EE.init(cwd);
       await writeStaticClientFiles(ctx);
-
+console.log(ctx.bundler)
       if (ctx.bundler === 'webpack') {
         const { watch: watchWebpack } = await import('./webpack/watch');
         bundleWatcher = await watchWebpack(ctx);

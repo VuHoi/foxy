@@ -6,11 +6,10 @@ import type { Strapi } from '@strapi/types';
 
 const registerAdminPanelRoute = ({ strapi }: { strapi: Strapi }) => {
   let buildDir = resolve(strapi.dirs.dist.root, 'build');
-
   if (!fse.pathExistsSync(buildDir)) {
     buildDir = resolve(__dirname, '../../build');
   }
-
+  console.log(buildDir, '111111');
   const serveAdminMiddleware = async (ctx: Context, next: Next) => {
     await next();
 
@@ -48,6 +47,29 @@ const registerAdminPanelRoute = ({ strapi }: { strapi: Strapi }) => {
       config: { auth: false },
     },
   ]);
+
+  //   strapi.server.routes([
+  //     {
+  //       method: 'GET',
+  //       path: `/:path*`,
+  //       handler: [
+  //         serveAdminMiddleware,
+  //         serveStatic(buildDir, {
+  //           maxage: 31536000,
+  //           defer: false,
+  //           index: 'index.html',
+  //           setHeaders(res: any, path: any) {
+  //             const ext = extname(path);
+  //             // publicly cache static files to avoid unnecessary network & disk access
+  //             if (ext !== '.html') {
+  //               res.setHeader('cache-control', 'public, max-age=31536000, immutable');
+  //             }
+  //           },
+  //         }),
+  //       ],
+  //       config: { auth: false },
+  //     },
+  //   ]);
 };
 
 // serveStatic is not supposed to be used to serve a folder that have sub-folders
