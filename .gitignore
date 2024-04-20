@@ -148,3 +148,5 @@ tests/e2e/.env
 # Strapi
 ############################
 examples/**/types/generated
+
+public/assets

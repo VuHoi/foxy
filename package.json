@@ -71,9 +71,12 @@
     "test:unit:all": "nx run-many --target=test:unit --nx-ignore-cycles",
     "test:unit:watch": "run test:unit --watch",
     "watch": "nx run-many --target=watch --nx-ignore-cycles",
-    "dev": "INLINE_RUNTIME_CHUNK=false strapi develop --watch-admin --bundler vite ",
+    "copy-build": "rm -rf public/assets/* && cp -r dist/assets/. public/assets/",
+    "dev": " strapi develop --watch-admin  --watch-admin --bundler vite",
     "strapi": "strapi",
-    "start": "strapi start"
+    "start": "strapi start",
+    "dev-client": "vite",
+    "build-client": " vite build && yarn copy-build"
   },
   "resolutions": {
     "@strapi/design-system": "1.17.0-typescript.0",
@@ -109,6 +112,7 @@
     "@types/styled-components": "5.1.32",
     "@typescript-eslint/eslint-plugin": "6.7.3",
     "@typescript-eslint/parser": "6.7.3",
+    "@vitejs/plugin-react": "^4.2.1",
     "babel-eslint": "10.1.0",
     "chalk": "4.1.2",
     "chokidar": "3.5.3",
@@ -129,6 +133,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
     "eslint-plugin-rxjs": "5.0.3",
     "eslint-plugin-testing-library": "6.0.2",
     "execa": "5.1.1",
@@ -154,6 +159,7 @@
     "supertest": "6.3.3",
     "ts-jest": "29.1.0",
     "typescript": "5.2.2",
+    "vite": "^5.2.0",
     "yargs": "17.7.2"
   },
   "packageManager": "yarn@4.0.1",

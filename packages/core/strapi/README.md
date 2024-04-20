@@ -29,11 +29,6 @@
 
 <br>
 
-<p align="center">
-  <a href="https://strapi.io">
-    <img src="https://raw.githubusercontent.com/strapi/strapi/main/public/assets/admin-demo.gif" alt="Administration panel" />
-  </a>
-</p>
 
 <br>
 

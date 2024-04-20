@@ -58,11 +58,31 @@ const watch = async (ctx: BuildContext): Promise<ViteWatcher> => {
     koaCtx.body = template;
   };
 
+  const serveClient: Common.MiddlewareHandler = async (koaCtx: any, next: any) => {
+    await next();
+
+    if (koaCtx.method !== 'HEAD' && koaCtx.method !== 'GET') {
+      return;
+    }
+
+    if (koaCtx.body != null || koaCtx.status !== 404) {
+      return;
+    }
+
+    const url = koaCtx.originalUrl;
+
+    let template = await fs.readFile(path.relative(ctx.cwd, 'dist/index.html'), 'utf-8');
+    template = await vite.transformIndexHtml(url, template);
+
+    koaCtx.type = 'html';
+    koaCtx.body = template;
+  };
+
   ctx.strapi.server.routes([
     {
       method: 'GET',
-      path: `${ctx.basePath}:path*`,
-      handler: serveAdmin,
+      path: `/:path*`,
+      handler: serveClient,
       config: { auth: false },
     },
   ]);
@@ -70,7 +90,7 @@ const watch = async (ctx: BuildContext): Promise<ViteWatcher> => {
   ctx.strapi.server.routes([
     {
       method: 'GET',
-      path: `/:path*`,
+      path: `${ctx.basePath}:path*`,
       handler: serveAdmin,
       config: { auth: false },
     },
