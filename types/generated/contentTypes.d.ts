@@ -320,6 +320,8 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     type: Attribute.Enumeration<['active', 'inactive']>;
     slug: Attribute.String;
     publish_at: Attribute.Date;
+    test: Attribute.String;
+    abc: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

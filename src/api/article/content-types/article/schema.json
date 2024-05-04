@@ -30,6 +30,12 @@
     },
     "publish_at": {
       "type": "date"
+    },
+    "test": {
+      "type": "string"
+    },
+    "abc": {
+      "type": "string"
     }
   }
 }

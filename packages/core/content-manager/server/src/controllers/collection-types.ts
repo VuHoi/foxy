@@ -8,7 +8,7 @@ export default {
     const { userAbility } = ctx.state;
     const { model } = ctx.params;
     const { query } = ctx.request;
-
+    console.log(model);
     const entityManager = getService('entity-manager');
     const permissionChecker = getService('permission-checker').create({ userAbility, model });
 
