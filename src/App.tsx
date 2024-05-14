@@ -3,7 +3,7 @@ import jsonData from './api/article/content-types/article/schema.json';
 import './App.css';
 
 function App() {
-  return <>{JSON.stringify(jsonData)}</>;
+  return <div className="text-black">{JSON.stringify(jsonData)}</div>;
 }
 
 export default App;

@@ -36,6 +36,9 @@
     },
     "abc": {
       "type": "string"
+    },
+    "aaa": {
+      "type": "string"
     }
   }
 }

@@ -6,8 +6,8 @@ import { formatAttributes, replaceTemporaryUIDs } from '../utils/attributes';
 import createBuilder from './schema-builder';
 import { coreUids, pluginsUids } from './constants';
 
-const { ApplicationError } = errors;
 
+const { ApplicationError } = errors;
 export const isContentTypeVisible = (model: Schema.ContentType) =>
   getOr(true, 'pluginOptions.content-type-builder.visible', model) === true;
 

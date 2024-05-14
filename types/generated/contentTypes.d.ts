@@ -322,6 +322,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     publish_at: Attribute.Date;
     test: Attribute.String;
     abc: Attribute.String;
+    aaa: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -79,12 +79,13 @@ export default {
           hasDraftAndPublish: hasDraftAndPublish(contentType.schema),
         },
       };
+      console.log(metricsPayload);
 
-      if (_.isEmpty(strapi.api)) {
-        await strapi.telemetry.send('didCreateFirstContentType', metricsPayload);
-      } else {
-        await strapi.telemetry.send('didCreateContentType', metricsPayload);
-      }
+      // if (_.isEmpty(strapi.api)) {
+      //   await strapi.telemetry.send('didCreateFirstContentType', metricsPayload);
+      // } else {
+      //   await strapi.telemetry.send('didCreateContentType', metricsPayload);
+      // }
 
       setImmediate(() => strapi.reload());
 

@@ -34,7 +34,7 @@
   "files": [
     "./dist"
   ],
-  "scripts": {
+  "scripts": { 
     "build": "pack-up build && run copy-files",
     "clean": "run -T rimraf ./dist",
     "copy-files": "copyfiles -u 1 -a 'src/templates/**/*' 'src/files/**/*' dist",

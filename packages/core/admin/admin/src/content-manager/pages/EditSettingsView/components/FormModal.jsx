@@ -29,7 +29,7 @@ const HeaderContainer = styled(Flex)`
   }
 `;
 
-const FormModal = ({ onToggle, onMetaChange, onSizeChange, onSubmit, type, customFieldUid }) => {
+const FormModal = ({ onToggle, onMetaChange, onSizeChange, onSubmit, type, customFieldUid }) => {  
   const { selectedField } = useLayoutDnd();
   const { formatMessage } = useIntl();
 
